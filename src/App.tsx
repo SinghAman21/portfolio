@@ -1,6 +1,6 @@
 
 import './App.css'
-import AsciiArt from './AsciiArt';
+import AsciiArt from './Landing/AsciiArt';
 // import LetterGlitch from './LetterGlitch'
 // import AsciiArt from './AsciiArt'
 
