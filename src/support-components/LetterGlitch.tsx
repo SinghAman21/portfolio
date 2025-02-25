@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-
+import terminalImage from 'terminal-image'
 const LetterGlitch = ({
   glitchSpeed = 50,
   centerVignette = false,
@@ -10,9 +10,9 @@ const LetterGlitch = ({
   centerVignette: boolean;
   outerVignette: boolean;
   smooth: boolean;
-  children: React.ReactNode;
+  // children: React.ReactNode;
 }) => {
-  const   glitchColors = ["#2b4539", "#61dca3", "#61b3dc"];
+  const glitchColors = ["#2b4539", "#61dca3", "#61b3dc"];
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const letters = useRef<
@@ -104,17 +104,17 @@ const LetterGlitch = ({
 
   const hexToRgb = (hex: string) => {
     const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    hex = hex.replace(shorthandRegex, ( r, g, b) => {
+    hex = hex.replace(shorthandRegex, (r, g, b) => {
       return r + r + g + g + b + b;
     });
 
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
       ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16),
-        }
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
       : null;
   };
 
@@ -314,7 +314,7 @@ const LetterGlitch = ({
   };
 
   return (
-    <div className='z-3 relative' style={containerStyle as React.CSSProperties} >
+    <div className='h-[90px] w-auto ' style={containerStyle as React.CSSProperties} >
       <canvas ref={canvasRef} style={canvasStyle} />
       {outerVignette && (
         <div style={outerVignetteStyle as React.CSSProperties}></div>
@@ -322,6 +322,13 @@ const LetterGlitch = ({
       {centerVignette && (
         <div style={centerVignetteStyle as React.CSSProperties}></div>
       )}
+      <div className="flex justify-center items-center h-full">
+        <button className="ui-btn">
+          <span>
+            Aman Singh
+          </span>
+        </button>
+      </div>
     </div>
   );
 };

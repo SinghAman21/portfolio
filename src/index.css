@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* @plugin "tailwindcss-animate"; */
+@custom-variant dark (&:is(.dark *));
 
 /* From Uiverse.io by Galahhad */ 
 .ui-btn {
