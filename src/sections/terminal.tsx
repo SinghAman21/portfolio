@@ -10,7 +10,7 @@ export default function Terminal() {
   const [showContent, setShowContent] = useState<JSX.Element | null>(null);
 
   const handleButtonClick = (buttonName: string) => {
-    window.scrollTo({ top: 500, behavior: 'smooth' });
+    window.scrollTo({ top: 5000, behavior: 'smooth' });
     setCommand(`ls -l`);
     if (buttonName === 'about') {
       setShowContent(<Aman />);
@@ -25,9 +25,10 @@ export default function Terminal() {
   };
 
   return (
-    <div className='bg-black text-white font-mono h-full w-full p-4 rounded-lg shadow-lg border border-gray-700'>
+    <div className='flex justify-center items-start h-screen'>
+    <div className='bg-terminal-bg text-white font-mono h-auto w-[80vw] rounded-lg shadow-lg border border-white-700 mx-auto'>
       {/* Terminal Header */}
-      <div className='flex items-center justify-between bg-gray-900 px-4 py-2 rounded-t-lg border-b border-gray-700'>
+      <div className='flex items-center justify-between bg-gray-900 px-4 py-2 rounded-t-lg border-2 border-white-700'>
         <span className='text-white font-semibold'>Master Terminal</span>
         <div className='flex space-x-2'>
           <Minus size={18} className='text-yellow-500 cursor-pointer hover:text-yellow-400' />
@@ -49,8 +50,9 @@ export default function Terminal() {
         <code className=' p-2 rounded w-fit'>{path} &gt; {command}</code>
         
         {/* Display Dynamic Content */}
-        <div className='p-4 rounded'>{showContent}</div>
+        <div className='p-2 rounded'>{showContent}</div>
       </div>
+    </div>
     </div>
   );
 }
