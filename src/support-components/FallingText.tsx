@@ -2,6 +2,12 @@ import { useRef, useState, useEffect } from "react";
 // import Matter from "matter-js";
 import Matter from "matter-js";
 
+interface FontSize {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+}
+
 interface FallingTextProps {
     text?: string;
     highlightWords?: string[];
@@ -11,7 +17,8 @@ interface FallingTextProps {
     wireframes?: boolean;
     gravity?: number;
     mouseConstraintStiffness?: number;
-    fontSize?: string;
+    fontSize?: string | number | FontSize;
+    containerClassName?: string;
 }
 
 const FallingText: React.FC<FallingTextProps> = ({
@@ -23,7 +30,8 @@ const FallingText: React.FC<FallingTextProps> = ({
     wireframes = false,
     gravity = 1,
     mouseConstraintStiffness = 0.2,
-    fontSize = "1rem"
+    fontSize = "1rem",
+    containerClassName = ""
 }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const textRef = useRef<HTMLDivElement | null>(null);
@@ -198,10 +206,21 @@ const FallingText: React.FC<FallingTextProps> = ({
         }
     };
 
+    const getFontSize = () => {
+        if (typeof fontSize === 'string' || typeof fontSize === 'number') {
+            return fontSize;
+        }
+        
+        const width = window.innerWidth;
+        if (width <= 425) return fontSize.mobile;
+        if (width <= 1024) return fontSize.tablet;
+        return fontSize.desktop;
+    };
+
     return (
         <div
             ref={containerRef}
-            className="falling-text-container"
+            className={`falling-text-container ${containerClassName}`}
             onClick={trigger === "click" ? handleTrigger : undefined}
             onMouseOver={trigger === "hover" ? handleTrigger : undefined}
             style={{
@@ -213,7 +232,7 @@ const FallingText: React.FC<FallingTextProps> = ({
                 ref={textRef}
                 className="falling-text-target"
                 style={{
-                    fontSize: fontSize,
+                    fontSize: getFontSize(),
                     lineHeight: 1.4,
                 }}
             />
