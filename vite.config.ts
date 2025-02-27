@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 
 const config = defineConfig({
-  plugins: [], // Pass plugins as an array of single plugins
+  plugins: [],
   resolve: {
     alias: {
       '@': './src',
