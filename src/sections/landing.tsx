@@ -1,4 +1,4 @@
-import LetterGlitch from '@/support-components/LetterGlitch'
+import LetterGlitch from '../support-components/LetterGlitch'
 
 export default function Landing() {
     return (
