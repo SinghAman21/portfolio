@@ -50,20 +50,30 @@ btw Good to see ya :)`;
 
   return (
     <>
-    
-      <div className='flex flex-row h-[30vw] w-auto'>
+      <div className='flex flex-col lg:flex-row h-auto w-full p-4 max-w-[425px] sm:max-w-full mx-auto'>
         
-        <div className='flex flex-col w-[50%]'>
-        <span className='flex flex-col'>
-      Hi! I am Aman Singh
-      I love to dive into pool of Information </span>
-          <pre>
-            {/* {typedText}{isTyping ? <span style={{animation: 'cursor 0.5s infinite'}}>_</span> : ''} */}
+        <div className='flex flex-col w-full lg:w-[50%] mb-6 lg:mb-0'>
+          <span className='flex flex-col text-2xl font-bold mb-4'>
+            Hi! I am Aman Singh
+            <span className='text-lg font-normal'>
+              I love to dive into pool of Information
+            </span>
+          </span>
+          <pre className='whitespace-pre-wrap font-sans text-base'>
             {typedText}{isTyping}<span style={{animation: 'cursor 0.5s infinite'}}>_</span>
           </pre>
         </div>
-        <div className='flex w-[50%] justify-evenly'>
-          <img className="rounded-3xl " src={green} alt="" height={200} width={300} style={{objectFit: 'cover'}}/>
+
+        <div className='flex w-full lg:w-[50%] justify-center lg:justify-evenly'>
+          <img 
+            className="rounded-3xl max-w-full h-auto" 
+            src={green} 
+            alt="Aman's picture" 
+            style={{
+              maxHeight: '300px',
+              objectFit: 'scale-down'
+            }}
+          />
         </div>
       </div>
     </>

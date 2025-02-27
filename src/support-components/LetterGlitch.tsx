@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import terminalImage from 'terminal-image'
-const LetterGlitch = ({
+const LetterGlitch = ({ 
   glitchSpeed = 50,
   centerVignette = false,
   outerVignette = true,
@@ -27,9 +27,9 @@ const LetterGlitch = ({
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const lastGlitchTime = useRef(Date.now());
 
-  const fontSize = 16;
-  const charWidth = 10;
-  const charHeight = 20;
+  let fontSize = 16;
+  let charWidth = 10;
+  let charHeight = 20;
 
   const lettersAndSymbols = [
     "A",
@@ -277,6 +277,34 @@ const LetterGlitch = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [glitchSpeed, smooth]);
 
+  useEffect(() => {
+    const updateDimensions = () => {
+      const width = window.innerWidth;
+      if (width <= 425) { // Mobile
+        fontSize = 12;
+        charWidth = 8;
+        charHeight = 16;
+      } else if (width <= 1024) { // Tablet
+        fontSize = 14;
+        charWidth = 9;
+        charHeight = 18;
+      } else { // Desktop
+        fontSize = 16;
+        charWidth = 10;
+        charHeight = 20;
+      }
+      
+      if (canvasRef.current) {
+        resizeCanvas();
+      }
+    };
+
+    window.addEventListener('resize', updateDimensions);
+    updateDimensions(); // Initial call
+
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
   const containerStyle = {
     position: "relative",
     width: "100%",
@@ -314,8 +342,12 @@ const LetterGlitch = ({
   };
 
   return (
-    <div className='h-[90px] w-auto ' style={containerStyle as React.CSSProperties} >
-      <canvas ref={canvasRef} style={canvasStyle} />
+    <div className='h-[60px] max-sm:h-[70px] lg:h-[90px] w-auto' style={containerStyle as React.CSSProperties}>
+      <canvas 
+        ref={canvasRef} 
+        style={canvasStyle} 
+        className='max-w-[425px] sm:max-w-full mx-auto'
+      />
       {outerVignette && (
         <div style={outerVignetteStyle as React.CSSProperties}></div>
       )}

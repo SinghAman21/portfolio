@@ -41,24 +41,38 @@ EXPLOREEEE!`
   }, [cursorIndex, isTyping, isTyping2, text, text2]);
   return (
     <>
-      <div className='text-white z-10 absolute top-10 flex items-center justify-center w-full h-[5vh]'>
-        <nav className='h-10 bg-opacity-50 backdrop-blur-xs rounded-3xl p-5 w-[90vw] flex justify-between items-center'>
-          <a className="text-white text-lg font-bold cursor-pointer" onClick={()=>{
-            window.location.reload();
+    <div className='absolute top-0 left-0 w-full h-full z-50 pointer-events-none sm:h-[50vh]'>
+      <div className='text-white z-10 absolute top-4 sm: flex items-center justify-center w-full'>
+        <nav className='h-15 min-h-[40px] backdrop-blur-xs rounded-3xl 
+           sm:p-5 w-[95vw] sm:w-[90vw] flex flex-col sm:flex-row 
+          justify-center sm:justify-between items-center gap-2 sm:gap-0 pointer-events-auto'>
+          
+          <a className="text-white text-base sm:text-lg font-bold cursor-pointer" 
+            onClick={()=>{
+              window.location.reload();
           }}>&lt;Aman/&gt;</a>
-          <a  className="text-white text-lg font-bold">
-            <pre>
+          
+          <a className="text-white text-base sm:text-lg font-bold">
+            <pre className="text-center">
               {typedText}{isTyping ? <span style={{animation: 'cursor 0.5s infinite'}}>_</span> : ''}
             </pre>
           </a>
-          <a  className="text-white text-lg font-bold cursor-pointer" onClick={scrollToTerminal}>Terminal</a>
+          
+          <a className="text-white text-base sm:text-lg font-bold cursor-pointer" 
+            onClick={scrollToTerminal}>
+            Terminal
+          </a>
         </nav>
-
       </div>
-      <div className='flex items-center justify-center w-auto h-auto'>
-      <pre className='text-white z-10 absolute top-[20rem] p-5 backdrop-blur-xs bg-blue rounded-2xl font-bold'>
-        {typedText2}{isTyping2 ? <span style={{animation: 'cursor 0.5s infinite'}}>_</span> : ''}
-      </pre>
+
+      <div className='flex items-center justify-center w-full h-auto px-4'>
+        <pre className='text-white z-10 relative top-[7rem] sm:top-[20rem] 
+          p-3 sm: backdrop-blur-xs  rounded-2xl font-bold
+          text-sm sm:text-base text-center sm:text-left
+          max-w-[95%] sm:max-w-none whitespace-pre-wrap'>
+          {typedText2}{isTyping2 ? <span style={{animation: 'cursor 0.5s infinite'}}>_</span> : ''}
+        </pre>
+      </div>
       </div>
     </>
   )

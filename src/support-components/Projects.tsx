@@ -48,32 +48,63 @@ export default function Projects() {
   ];
 
   return (
-<div className='grid grid-cols-3 justify-start h-[30vw] w-auto overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500 scrollbar-track-gray-200'>
-  {projects.map(project => (
-    <div className='mx-4 py-2 h-[30vw] w-auto flex flex-col justify-between' key={project.name}>
-      <span className='text-center'>||=================================||</span>
-      <div className='py-4 px-4 flex-1'>
-        {project.img && (
-          <img className='mx-auto' src={project.img} alt={project.name} height={300} width={300} />
-        )}
-        <br />
-        <h2 className='text-3xl text-gray-100'>{project.name}</h2>
-        <p className='text-base text-gray-500 py-1'>{project.about}</p>
-        <span className='relative top-4'>
-        {project.link && (
-          <a href={project.link} target="_blank" rel="noopener noreferrer">View Live</a>
-        )} 
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        {project.github_link && (
-          <a href={project.github_link} target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        )}
-        </span>
-        <br />
-      </div>
-      <span className='text-center'>||=================================||</span>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 
+      h-auto w-full overflow-y-auto max-h-[80vh] 
+      scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500 scrollbar-track-gray-200'>
+      {projects.map(project => (
+        <div className='mx-2 sm:mx-4 py-2 h-auto min-h-[400px] sm:min-h-[450px] 
+          w-full flex flex-col justify-between' key={project.name}>
+          
+          <span className='text-center text-sm sm:text-base'>
+            ||=================================||
+          </span>
+          
+          <div className='py-2 sm:py-4 px-2 sm:px-4 flex-1'>
+            {project.img && (
+              <img 
+                className='mx-auto max-w-full h-auto object-contain 
+                  max-h-[150px] sm:max-h-[200px]' 
+                src={project.img} 
+                alt={project.name} 
+              />
+            )}
+            <br />
+            <h2 className='text-xl sm:text-2xl lg:text-3xl text-gray-100 mb-2'>
+              {project.name}
+            </h2>
+            <p className='text-sm sm:text-base text-gray-500 py-1'>
+              {project.about}
+            </p>
+            
+            <div className='flex flex-col sm:flex-row gap-2 sm:gap-4 mt-4'>
+              {project.link && (
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-400 transition-colors text-sm sm:text-base"
+                >
+                  View Live
+                </a>
+              )}
+              {project.github_link && (
+                <a 
+                  href={project.github_link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gray-300 transition-colors text-sm sm:text-base"
+                >
+                  View on GitHub
+                </a>
+              )}
+            </div>
+          </div>
+          
+          <span className='text-center text-sm sm:text-base'>
+            ||=================================||
+          </span>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
-
   );
 }
