@@ -1,41 +1,71 @@
-import DecryptedText from './DecryptedText'
+import { useState, useEffect } from 'react';
+import green from './green-shirt.png';
+
 export default function Aman() {
+  const thingsIDo = ['Development','DSA', 'Mendling with OS', 'Exploring Technologies', 'Plays Badminton'];
+
+  const getRandomColor = () => {
+    const colors = [
+      '#FF69B4', '#33CC33', '#6666FF', '#FF9900', '#CC33CC',
+      '#33CCCC', '#FF33CC', '#CCFF33', '#33CCFF', '#FFCC33'
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+  
+const tellme = () => {
+//  What should i add text? Tell me
+// I want if the user clicks on the tell me part it should just scroll down give a glow to div id="connect"
+// you can use props,useref etc Make sure that the scrolling is smooth and tell me should have typing effect
+}
+  const text = `Currently an engineering student pursuing Bachelor in Technology. 
+I have worked with various Development technologies.
+
+Things i do:\n${thingsIDo.join('\n')}
+
+What should i add next? 
+
+
+
+
+
+btw Good to see ya :)`;
+
+  // console.log(text);
+
+  const [typedText, setTypedText] = useState('');
+  const [cursorIndex, setCursorIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (isTyping) {
+        const nextIndex = cursorIndex + 1;
+        setTypedText(text.slice(0, nextIndex));
+        setCursorIndex(nextIndex);
+        if (nextIndex >= text.length) setIsTyping(false);
+      }
+    }, 50);
+    return () => clearInterval(timer);
+  }, [cursorIndex, isTyping, text]);
+
   return (
     <>
+    
+      <div className='flex flex-row h-[30vw] w-auto'>
+        
+        <div className='flex flex-col w-[50%]'>
+        <span className='flex flex-col'>
       Hi! I am Aman Singh
-      I love to dive into pool of information 👾
-      <div className='flex'>
-        <div>
-          {/* Example 1: Defaults (hover to decrypt) */}
-          <DecryptedText text="Hover me!" />
-
-          {/* Example 2: Customized speed and characters */}
-          <DecryptedText
-            text="Customize me"
-            speed={100}
-            maxIterations={20}
-            characters="ABCD1234!?"
-            className="revealed"
-            parentClassName="all-letters"
-            encryptedClassName="encrypted"
-          />
-
-          {/* Example 3: Animate on view (runs once) */}
-          <div style={{ marginTop: '' }}>
-            <DecryptedText
-              text="This text animates when in view"
-              animateOn="view"
-              revealDirection="center"
-            />
-          </div>
+      I love to dive into pool of Information </span>
+          <pre>
+            {/* {typedText}{isTyping ? <span style={{animation: 'cursor 0.5s infinite'}}>_</span> : ''} */}
+            {typedText}{isTyping}<span style={{animation: 'cursor 0.5s infinite'}}>_</span>
+          </pre>
         </div>
-        <div>
-
+        <div className='flex w-[50%] justify-evenly'>
+          <img className="rounded-3xl " src={green} alt="" height={200} width={300} style={{objectFit: 'cover'}}/>
         </div>
       </div>
-
-
-
     </>
-  )
+  );
 }
