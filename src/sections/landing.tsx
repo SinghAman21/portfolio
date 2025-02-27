@@ -1,5 +1,4 @@
 import LetterGlitch from '@/support-components/LetterGlitch'
-import React from 'react'
 
 export default function Landing() {
     return (

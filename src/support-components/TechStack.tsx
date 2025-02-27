@@ -1,4 +1,3 @@
-import React from 'react'
 import FallingText from '../support-components/FallingText';
 
 export default function TechStack() {

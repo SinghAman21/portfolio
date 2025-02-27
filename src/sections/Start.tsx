@@ -1,4 +1,3 @@
-import React from 'react'
 import Headog from '../support-components/Headog';
 
 
