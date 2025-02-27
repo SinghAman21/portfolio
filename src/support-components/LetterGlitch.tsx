@@ -323,11 +323,6 @@ const LetterGlitch = ({
         <div style={centerVignetteStyle as React.CSSProperties}></div>
       )}
       <div className="flex justify-center items-center h-full">
-        <button className="ui-btn">
-          <span>
-            Aman Singh
-          </span>
-        </button>
       </div>
     </div>
   );
