@@ -94,7 +94,7 @@ const asciivalue = [`
   `
 ];
 
-const AsciiArt: React.FC<OutBoxProps> = ({ children }) => {
+const AsciiArt: React.FC<OutBoxProps> = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

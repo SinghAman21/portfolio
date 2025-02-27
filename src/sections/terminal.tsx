@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { X, Minus, Square } from 'lucide-react';
+import { useState } from 'react';
 import Aman from '../support-components/Aman';
 import TechStack from '../support-components/TechStack';
 import Projects from '../support-components/Projects';

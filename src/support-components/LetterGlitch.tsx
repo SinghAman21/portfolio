@@ -1,5 +1,4 @@
 import { useRef, useEffect } from "react";
-import terminalImage from 'terminal-image'
 const LetterGlitch = ({ 
   glitchSpeed = 50,
   centerVignette = false,

@@ -1,6 +1,3 @@
-import React from 'react';
-// import reactImg from '../assets/react.png'; // Corrected import
-import img from './911-target.png';
 import moon from './moon.png';
 import key from './key.png';
 import readme from './readme.png';
