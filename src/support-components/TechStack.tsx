@@ -8,8 +8,8 @@ export default function TechStack() {
       </span>
   
       <FallingText
-        text={`HTML CSS Tailwind Node.js React.js JavaScript Python Figma TypeScript Bootstrap Express MongoDB PostgreSQL Bash Git Linux Postman`}
-        highlightWords={["Tailwind", "JavaScript", "Node.js", "Git", "TypeScript"]}
+        text={`HTML CSS  Tailwind Node.js React.js JavaScript Python Figma TypeScript Bootstrap Express MongoDB Kali PostgreSQL Bash Git Linux Postman`}
+        highlightWords={["Tailwind", "JavaScript","Kali", "Node.js", "Git", "TypeScript"]}
         highlightClass="highlighted"
         trigger="hover"
         backgroundColor="transparent"

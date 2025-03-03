@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import green from './green-shirt.png';
+// import green from './green-shirt.png';
 
 export default function Aman() {
-  const thingsIDo = ['Development','DSA', 'Mendling with OS', 'Exploring Technologies', 'Plays Badminton'];
+  const thingsIDo = ['Development','DSA', 'Mendling with OS', 'Exploring Technologies', 'Dev Ops'];
 
   // const getRandomColor = () => {
   //   const colors = [
@@ -65,15 +65,7 @@ btw Good to see ya :)`;
         </div>
 
         <div className='flex w-full lg:w-[50%] justify-center lg:justify-evenly'>
-          <img 
-            className="rounded-3xl max-w-full h-auto" 
-            src={green} 
-            alt="Aman's picture" 
-            style={{
-              maxHeight: '300px',
-              objectFit: 'scale-down'
-            }}
-          />
+         {/*  <img className="rounded-3xl max-w-full h-auto" src={green} alt="Aman's picture" style={{maxHeight: '300px', objectFit: 'scale-down'}}          /> */}
         </div>
       </div>
     </>
