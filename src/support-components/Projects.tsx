@@ -46,7 +46,7 @@ export default function Projects() {
 
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 
-      h-auto w-full overflow-y-auto max-h-[80vh] 
+      h-auto w-full overflow-y-auto overflow-x-hidden max-h-[80vh] 
       scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500 scrollbar-track-gray-200'>
       {projects.map(project => (
         <div className='mx-2 sm:mx-4 py-2 h-auto min-h-[400px] sm:min-h-[450px] 
