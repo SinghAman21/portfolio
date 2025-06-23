@@ -30,7 +30,7 @@ const TerminalBlock: React.FC = () => {
   }, [currentLine]);
 
   return (
-    <div className="w-[100vw] max-w-2xl rounded-xl shadow-2xl border border-[#23272e] bg-[#23272e] overflow-hidden">
+    <div className="w-full h-[55vh] max-w-7xl rounded-xl shadow-2xl border border-[#23272e] bg-[#23272e] overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between bg-[#181c20] px-6 py-2 border-b border-[#23272e]">
         <span className="text-[#00e0ff] font-bold font-mono">root@user: ~</span>
