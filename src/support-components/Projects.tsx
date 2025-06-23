@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
               />
               {/* Diagonal colored border highlight */}
               <div
-                className="absolute top-0 right-0 w-2/3 h-full pointer-events-none transition-all duration-300"
+                className="absolute top-0 right-[-1px] w-2/3 h-full pointer-events-none transition-all duration-300 "
                 style={{
                   clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 80% 100%)',
                   background: 'linear-gradient(120deg, #23272e 100%, transparent 100%)',

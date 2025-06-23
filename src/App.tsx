@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TerminalBlock from './support-components/TerminalBlock';
 import Projects from './support-components/Projects';
+import Footer from './support-components/Ender';
+
 
 function App() {
   const fullText = 'Aman Singh';
@@ -47,20 +49,29 @@ function App() {
               &gt; <span className="text-[#bfc8f8]">{displayText}{showCursor && <span className="bg-[#00e0ff] text-[#00e0ff] ml-2 px-4 rounded-sm animate-pulse"></span>}</span>
             </span>
           </div>
-          <p className="mt-20  text-[#bfc8f8] text-xl md:text-2xl text-left w-full max-w-7xl">
-            I am a developer. My passion is to break things and understand it.<br />
-            Check out my <a href="#" className="text-[#00e0ff] font-semibold underline underline-offset-2 hover:text-[#b8ffb8]">side-projects</a> below.
-          </p>
+          <span className="mt-20 flex flex-col gap-y-3 text-[#bfc8f8] text-xl md:text-2xl text-left w-full max-w-7xl">
+            <p className="">
+            I am a developer. My passion is to break things and understand it.</p>
+            <p> Check out my <a href="#" className="text-[#00e0ff] font-semibold underline underline-offset-2 hover:text-[#b8ffb8]">side-projects</a> below.
+            </p>
+          </span>
         </div>
 
         {/* Terminal Block */}
-        <div className="w-full flex justify-center mt-8">
+        <div className="w-full flex justify-center mt-20">
           <TerminalBlock />
         </div>
 
-      <div className="w-full text-white mt-15 md-5"> 
-        <Projects/>
-      </div>
+
+        <div className="w-full text-white mt-15 md-5">
+          <Projects />
+          {/* <TechStack/> */}
+        </div>
+
+        <div className="w-full text-white mt-15 md-5">
+          {/* <Projects /> */}
+          <Footer/>
+        </div>
       </div>
     </>
   );
