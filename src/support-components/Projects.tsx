@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import npm from './n.png';
 import resumeme from './resume.png';
+import heal from './heal.png'
 
 
 interface Project {
@@ -20,7 +21,7 @@ const Projects: React.FC = () => {
     const data: Project[] = [
       {
         title: 'template-boss',
-        description: 'template-boss provides you a readmade template with with necessary configurations gives you a headstart to give birth a new idea',
+        description: 'template-boss provides ready-made templates with essential configurations, giving you a head start to launch and develop new ideas efficiently.',
         image: npm, // or null
         tech: ['JavaScript'],
         demo: undefined,
@@ -28,12 +29,20 @@ const Projects: React.FC = () => {
       },
       {
         title: 'ResumeMe',
-        description: 'ResumeMe gives you a reality check in both formal and informal way so taht you can be a joke to yourself not for others ',
+        description: 'ResumeMe offers honest feedback on your resume in both formal and informal styles, helping you reflect on your strengths and weaknesses with a touch of humor.',
         image: resumeme, // or null
         tech: ['TypeScript', 'Python', 'Flask' , 'NLP' , 'AI'],
         demo: 'https://checkyourresume.vercel.app/',
         source: 'https://github.com/Tanay-277/ResumeMe',
-      }
+      },
+      {
+        title: 'HealthCare AI',
+        description: 'An advanced AI healthcare assistant that creates personalized survival plans tailored to your unique circumstances.',
+        image: heal, // or null
+        tech: ['TypeScript',  'GEN AI' , 'Python'],
+        demo: 'https://mp38.vercel.app/',
+        source: 'https://github.com/SinghAman21/mini-project-04',
+      },
     ];
     setProjects(data);
   }, []);
@@ -41,14 +50,14 @@ const Projects: React.FC = () => {
   return (
     <section className="w-full flex flex-col items-center py-10 md:py-16 bg-[#181c20] px-2 sm:px-4">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#bfc8f8] mb-10 md:mb-40 text-center">Projects</h2>
-      <div className="w-full max-w-6xl flex flex-col gap-10 md:gap-[25vh]">
+      <div className="w-full max-w-5xl flex flex-col gap-8 md:gap-[15vh]">
         {projects.map((project, idx) => (
           <div
             key={project.title + idx}
-            className="group flex flex-col md:flex-row w-full scale-100 md:scale-125 h-auto md:h-[50vh] bg-[#23272e] rounded-2xl shadow-2xl overflow-hidden border border-[#23272e] hover:shadow-[#00e0ff44] transition-shadow duration-300 ease-in-out"
+            className="group flex flex-col md:flex-row w-full min-h-[420px] md:min-h-[340px] bg-[#23272e] rounded-2xl shadow-2xl overflow-hidden border border-[#23272e] hover:shadow-[#00e0ff44] transition-shadow duration-300 ease-in-out"
           >
             {/* Diagonal image with colored border and shadow */}
-            <div className="relative w-full md:w-1/3 min-h-[160px] sm:min-h-[180px] md:min-h-[220px] flex items-stretch">
+            <div className="relative w-full md:w-1/3 min-h-[180px] md:min-h-[220px] flex items-stretch">
               <img
                 src={project.image || '/fallback.png'}
                 alt={project.title}

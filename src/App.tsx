@@ -43,14 +43,14 @@ function App() {
         </nav>
 
         {/* Typewriter */}
-        <div className="w-full max-w-7xl flex flex-col items-center mb-8 px-2 md:px-0">
+        <div className="w-full max-w-6xl flex flex-col items-center mb-8 px-2 md:px-0">
           <div className="w-full flex justify-start mt-10 md:mt-[15vh]">
             <span className="text-2xl sm:text-3xl md:text-[3rem] lg:text-[5rem] font-mono font-semibold text-[#00e0ff]">
               &gt; <span className="text-[#bfc8f8]">{displayText}{showCursor && <span className="bg-[#00e0ff] text-[#00e0ff] ml-1 md:ml-2 px-2 md:px-4 rounded-sm animate-pulse"></span>}</span>
             </span>
           </div>
           <span className="mt-10 md:mt-20 flex flex-col gap-y-2 md:gap-y-3 text-[#bfc8f8] text-base sm:text-xl md:text-2xl text-left w-full max-w-7xl px-1 md:px-0">
-            <p className="">I am a Developer. My passion is to break things and understand it.</p>
+            <p className="">I am a Indie Hacker. My passion is to break things and understand it.</p>
             <p>Check out my <a onClick={() => scrolldown(1200)} className="text-[#00e0ff] font-semibold underline underline-offset-2 hover:text-[#b8ffb8] cursor-pointer">side-projects</a> below.</p>
           </span>
         </div>
