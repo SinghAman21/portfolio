@@ -146,7 +146,7 @@ const TerminalBlock: React.FC = () => {
   
 
   return (
-    <div className="w-full h-[55vh] max-w-7xl rounded-xl shadow-2xl border border-[#23272e] bg-[#23272e] overflow-hidden">
+    <div className="w-full h-[65vh] max-w-5xl rounded-xl shadow-2xl border border-[#23272e] bg-[#23272e] overflow-hidden">
       {/* Header */}
       <div className="relative flex items-center justify-center bg-[#181c20] px-6 py-2 border-b border-[#23272e]">
         {/* Centered title */}

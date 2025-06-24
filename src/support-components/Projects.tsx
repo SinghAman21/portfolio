@@ -41,14 +41,14 @@ const Projects: React.FC = () => {
   return (
     <section className="w-full flex flex-col items-center py-10 md:py-16 bg-[#181c20] px-2 sm:px-4">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#bfc8f8] mb-10 md:mb-40 text-center">Projects</h2>
-      <div className="w-full max-w-6xl flex flex-col gap-10 md:gap-[25vh]">
+      <div className="w-full max-w-5xl flex flex-col gap-8 md:gap-[15vh]">
         {projects.map((project, idx) => (
           <div
             key={project.title + idx}
-            className="group flex flex-col md:flex-row w-full scale-100 md:scale-125 h-auto md:h-[50vh] bg-[#23272e] rounded-2xl shadow-2xl overflow-hidden border border-[#23272e] hover:shadow-[#00e0ff44] transition-shadow duration-300 ease-in-out"
+            className="group flex flex-col md:flex-row w-full min-h-[420px] md:min-h-[340px] bg-[#23272e] rounded-2xl shadow-2xl overflow-hidden border border-[#23272e] hover:shadow-[#00e0ff44] transition-shadow duration-300 ease-in-out"
           >
             {/* Diagonal image with colored border and shadow */}
-            <div className="relative w-full md:w-1/3 min-h-[160px] sm:min-h-[180px] md:min-h-[220px] flex items-stretch">
+            <div className="relative w-full md:w-1/3 min-h-[180px] md:min-h-[220px] flex items-stretch">
               <img
                 src={project.image || '/fallback.png'}
                 alt={project.title}

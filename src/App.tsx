@@ -43,7 +43,7 @@ function App() {
         </nav>
 
         {/* Typewriter */}
-        <div className="w-full max-w-7xl flex flex-col items-center mb-8 px-2 md:px-0">
+        <div className="w-full max-w-6xl flex flex-col items-center mb-8 px-2 md:px-0">
           <div className="w-full flex justify-start mt-10 md:mt-[15vh]">
             <span className="text-2xl sm:text-3xl md:text-[3rem] lg:text-[5rem] font-mono font-semibold text-[#00e0ff]">
               &gt; <span className="text-[#bfc8f8]">{displayText}{showCursor && <span className="bg-[#00e0ff] text-[#00e0ff] ml-1 md:ml-2 px-2 md:px-4 rounded-sm animate-pulse"></span>}</span>
