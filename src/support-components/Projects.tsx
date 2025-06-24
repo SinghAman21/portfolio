@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import npm from './n.png';
 import resumeme from './resume.png';
+import heal from './heal.png'
 
 
 interface Project {
@@ -20,7 +21,7 @@ const Projects: React.FC = () => {
     const data: Project[] = [
       {
         title: 'template-boss',
-        description: 'template-boss provides you a readmade template with with necessary configurations gives you a headstart to give birth a new idea',
+        description: 'template-boss provides ready-made templates with essential configurations, giving you a head start to launch and develop new ideas efficiently.',
         image: npm, // or null
         tech: ['JavaScript'],
         demo: undefined,
@@ -28,12 +29,20 @@ const Projects: React.FC = () => {
       },
       {
         title: 'ResumeMe',
-        description: 'ResumeMe gives you a reality check in both formal and informal way so taht you can be a joke to yourself not for others ',
+        description: 'ResumeMe offers honest feedback on your resume in both formal and informal styles, helping you reflect on your strengths and weaknesses with a touch of humor.',
         image: resumeme, // or null
         tech: ['TypeScript', 'Python', 'Flask' , 'NLP' , 'AI'],
         demo: 'https://checkyourresume.vercel.app/',
         source: 'https://github.com/Tanay-277/ResumeMe',
-      }
+      },
+      {
+        title: 'HealthCare AI',
+        description: 'An advanced AI healthcare assistant that creates personalized survival plans tailored to your unique circumstances.',
+        image: heal, // or null
+        tech: ['TypeScript',  'GEN AI' , 'Python'],
+        demo: 'https://mp38.vercel.app/',
+        source: 'https://github.com/SinghAman21/mini-project-04',
+      },
     ];
     setProjects(data);
   }, []);

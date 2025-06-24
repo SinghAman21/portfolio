@@ -10,7 +10,7 @@ const terminalLines = [
     output: [
       { label: 'Mail', url: 'mailto:work.singhaman@gmail.com' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/aman-singh21' },
-      { label: 'github', url: 'https://github.com/SinghAman21' }
+      { label: 'X', url: 'https://twitter.com/useraman21' }
     ]
   },
   { 
@@ -66,7 +66,7 @@ const TerminalBlock: React.FC = () => {
         // Move to next pair
         setTimeout(() => {
           setCurrentPair(i => i + 1);
-        }, 900);
+        }, 500);
       }, 200);
     }, currentPair === 0 ? 0 : 200);
     return () => clearTimeout(showCommand);
@@ -82,7 +82,7 @@ const TerminalBlock: React.FC = () => {
             <React.Fragment key={item.label}>
               <a
                 href={item.url}
-                target={item.url.startsWith('http') ? "_blank" : undefined}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="underline text-[#00e0ff] hover:text-[#b8ffb8] transition"
               >

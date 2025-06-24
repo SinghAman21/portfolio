@@ -50,7 +50,7 @@ function App() {
             </span>
           </div>
           <span className="mt-10 md:mt-20 flex flex-col gap-y-2 md:gap-y-3 text-[#bfc8f8] text-base sm:text-xl md:text-2xl text-left w-full max-w-7xl px-1 md:px-0">
-            <p className="">I am a Developer. My passion is to break things and understand it.</p>
+            <p className="">I am a Indie Hacker. My passion is to break things and understand it.</p>
             <p>Check out my <a onClick={() => scrolldown(1200)} className="text-[#00e0ff] font-semibold underline underline-offset-2 hover:text-[#b8ffb8] cursor-pointer">side-projects</a> below.</p>
           </span>
         </div>
