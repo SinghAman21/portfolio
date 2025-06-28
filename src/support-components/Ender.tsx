@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             X
           </a>
           <a
-            href="https://peerlist.io/singhaman21"
+            href="https://peerlist.io/singhaman21/signup"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-green-400 hover:text-[#00e0ff] transition text-base md:text-lg"
