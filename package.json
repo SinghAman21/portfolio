@@ -2,11 +2,11 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://singhaman21.github.io/portfolio/",
+  "homepage": "https://SinghAman21.github.io/portfolio/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
