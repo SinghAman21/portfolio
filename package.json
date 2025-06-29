@@ -2,8 +2,11 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://SinghAman21.github.io/portfolio",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -12,6 +15,7 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.7",
     "bootstrap-icons": "^1.11.3",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.475.0",
     "matter-js": "^0.20.0",
     "motion": "^12.18.1",
