@@ -1,7 +1,17 @@
 @import "tailwindcss";
 /* @plugin "tailwindcss-animate"; */
 /* @custom-variant dark (&:is(.dark *)); */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap'); */
+
+@font-face {
+	font-family: JetBrainsMono;
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/JetBrainsMonoVariable.woff2") format("woff2");
+}
+
+*{font-family:"JetbrainsMono"}
 
 body {
   margin: 0;
