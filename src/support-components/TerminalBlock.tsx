@@ -29,7 +29,7 @@ const terminalLines = [
   },
   { 
     command: 'Aman.skills', 
-    output: '["Kali",  "Python", "JavaScript", "React", "Backend Engineering", "Flask", "Kali", "git"]' 
+    output: '["Kali",  "Python", "Git", "Open Source Contributor","JavaScript", "React", "Backend Engineering", "Flask", "GitHub Actions ","Appwrite", "Firebase", "GCP"]' 
   }
 ];
 
