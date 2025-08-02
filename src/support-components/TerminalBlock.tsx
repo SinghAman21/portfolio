@@ -10,7 +10,7 @@ const terminalLines = [
     output: [
       { label: 'Mail', url: 'mailto:work.singhaman@gmail.com' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/aman-singh21' },
-      { label: 'X', url: 'https://twitter.com/useraman21' }
+      { label: 'X', url: 'https://x.com/useraman21' }
     ]
   },
   { 

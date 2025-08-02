@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="w-full flex flex-col items-center justify-center flex-wrap gap-4 md:gap-6 mb-6 md:mb-8 max-w-2xl">
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full items-center">
           <a
-            href="https://twitter.com/useraman21"
+            href="https://x.com/useraman21"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[#bfc8f8] hover:text-[#00e0ff] transition text-base md:text-lg"
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="text-[#bfc8f8] text-xs md:text-md text-center">
-        &copy; {new Date().getFullYear()} Aman Singh. All rights reserved.
+        &copy; {new Date().getFullYear()} <a href="https://x.com/useraman21">Aman Singh</a>. All rights reserved.
       </div>
     </footer>
   );

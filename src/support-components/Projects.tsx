@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import npm from './n.png';
-import resumeme from './resume.png';
-import heal from './heal.png'
-
+import npm from './photos/n.png';
+import resumeme from './photos/resume.png';
+import heal from './photos/heal.png'
+import silentparcel from './photos/silentparcel.jpg'
 
 interface Project {
   title: string;
@@ -20,18 +20,26 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const data: Project[] = [
       {
+        title: 'SilentParcel',
+        description:'SilentParcel offers secure, anonymous file sharing and chat—no registration. Files are AES-256 encrypted in your browser, ensuring SilentParcel can\'t access your data.',
+        image: silentparcel, // or null
+        tech: ['TypeScript', 'Next.js', 'Appwrite', 'Shadcn', 'Tailwind CSS', 'Github Actions'],
+        demo: 'https://silentparcel.com/?utm_source=linkedin',
+        source: 'https://github.com/SinghAman21/silentparcel',
+      },
+      {
         title: 'template-boss',
         description: 'template-boss provides ready-made templates with essential configurations, giving you a head start to launch and develop new ideas efficiently.',
         image: npm, // or null
         tech: ['JavaScript'],
-        demo: undefined,
+        demo: 'https://www.npmjs.com/package/template-boss',
         source: 'https://github.com/SinghAman21/template-boss',
       },
       {
         title: 'ResumeMe',
         description: 'ResumeMe offers honest feedback on your resume in both formal and informal styles, helping you reflect on your strengths and weaknesses with a touch of humor.',
         image: resumeme, // or null
-        tech: ['TypeScript', 'Python', 'Flask' , 'NLP' , 'AI'],
+        tech: ['TypeScript', 'Python', 'Flask' ,'Gemini', 'NLP' , 'AI'],
         demo: 'https://checkyourresume.vercel.app/',
         source: 'https://github.com/Tanay-277/ResumeMe',
       },
@@ -39,7 +47,7 @@ const Projects: React.FC = () => {
         title: 'HealthCare AI',
         description: 'An advanced AI healthcare assistant that creates personalized survival plans tailored to your unique circumstances.',
         image: heal, // or null
-        tech: ['TypeScript',  'GEN AI' , 'Python'],
+        tech: ['TypeScript','Gemini',  'GEN AI' , 'Python'],
         demo: 'https://mp38.vercel.app/',
         source: 'https://github.com/SinghAman21/mini-project-04',
       },
