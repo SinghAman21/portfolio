@@ -76,7 +76,7 @@ const TerminalBlock: React.FC = () => {
   const renderOutput = (output: OutputType) => {
     if (Array.isArray(output)) {
       return (
-        <span className="flex flex-wrap gap-2">
+        <span className="flex flex-wrap gap-1 sm:gap-2">
           [
           {output.map((item, idx) => (
             <React.Fragment key={item.label}>
@@ -84,7 +84,7 @@ const TerminalBlock: React.FC = () => {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline text-[#00e0ff] hover:text-[#b8ffb8] transition"
+                className="underline text-[#00e0ff] hover:text-[#b8ffb8] transition break-words"
               >
                 {item.label}
               </a>
@@ -146,27 +146,27 @@ const TerminalBlock: React.FC = () => {
   
 
   return (
-    <div className="w-full h-[65vh] max-w-5xl rounded-xl shadow-2xl border border-[#23272e] bg-[#23272e] overflow-hidden">
+    <div className="w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] max-w-5xl rounded-xl shadow-2xl border border-[#23272e] bg-[#23272e] overflow-hidden">
       {/* Header */}
-      <div className="relative flex items-center justify-center bg-[#181c20] px-6 py-2 border-b border-[#23272e]">
+      <div className="relative flex items-center justify-center bg-[#181c20] px-3 sm:px-6 py-2 border-b border-[#23272e]">
         {/* Centered title */}
-        <span className="absolute left-1/2 -translate-x-1/2 text-[#00e0ff] font-bold font-mono text-center">root@aman ~</span>
+        <span className="absolute left-1/2 -translate-x-1/2 text-[#00e0ff] font-bold font-mono text-center text-sm sm:text-base">root@aman ~</span>
         {/* Window controls on the right */}
         <div className="flex gap-2 ml-auto">
-          <span className="w-5 h-5 rounded-full bg-yellow-400 border border-yellow-600 shadow"><MinimizeRoundedIcon size={18} color=''/></span>
-          <span className="w-5 h-5 rounded-full bg-green-400 border border-green-600 shadow"><SquareIcon size={18}/></span>
-          <span className="w-5 h-5 rounded-full bg-red-400 border border-red-600 shadow"><CrossIcon size={18}/></span>
+          <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-yellow-400 border border-yellow-600 shadow"><MinimizeRoundedIcon size={14} color=''/></span>
+          <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-green-400 border border-green-600 shadow"><SquareIcon size={14}/></span>
+          <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-red-400 border border-red-600 shadow"><CrossIcon size={14}/></span>
         </div>
       </div>
       {/* Body */}
-      <div className="bg-[#23272e] px-8 py-6 min-h-[320px] font-mono text-base md:text-lg">
+      <div className="bg-[#23272e] px-4 sm:px-6 lg:px-8 py-4 sm:py-6 min-h-[250px] sm:min-h-[300px] lg:min-h-[320px] font-mono text-sm sm:text-base lg:text-lg overflow-y-auto">
         {displayed.map((line, idx) => (
           <div
             key={idx}
             className={
               line.type === 'command'
-                ? 'text-[#00e0ff] font-semibold flex items-center'
-                : 'text-[#b8ffb8] ml-8'
+                ? 'text-[#00e0ff] font-semibold flex items-start break-words'
+                : 'text-[#b8ffb8] ml-4 sm:ml-6 lg:ml-8 break-words whitespace-pre-wrap'
             }
           >
             {line.type === 'output'
