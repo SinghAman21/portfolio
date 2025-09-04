@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<App />} />
-        <Route path="/Aman-Resume.pdf" element={<ResumeRedirect />} />
+        <Route path="/Aman-Resume-v2.pdf" element={<ResumeRedirect />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
