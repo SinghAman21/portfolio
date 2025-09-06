@@ -72,25 +72,59 @@ const TerminalBlock: React.FC = () => {
     return () => clearTimeout(showCommand);
   }, [currentPair]);
 
+  // Function to handle resume click - both navigate and download
+  const handleResumeClick = async (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault(); // Prevent default link behavior
+    
+    // Open the resume route
+    window.open(url, '_blank');
+    
+    // Also trigger download
+    try {
+      const response = await fetch('/Aman-Resume.pdf');
+      if (!response.ok) throw new Error('Download failed');
+      
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = 'Aman-Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      
+      // Cleanup
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(downloadUrl);
+    } catch (error) {
+      console.error('Download failed:', error);
+    }
+  };
+
   // Helper to render output with links
   const renderOutput = (output: OutputType) => {
     if (Array.isArray(output)) {
       return (
         <span className="flex flex-wrap gap-1 sm:gap-2">
           [
-          {output.map((item, idx) => (
-            <React.Fragment key={item.label}>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-[#00e0ff] hover:text-[#b8ffb8] transition break-words"
-              >
-                {item.label}
-              </a>
-              {idx < output.length - 1 && <span>,&nbsp;</span>}
-            </React.Fragment>
-          ))}
+          {output.map((item, idx) => {
+            const isResumeLink = item.url.includes('Resume.pdf');
+            
+            return (
+              <React.Fragment key={item.label}>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={isResumeLink ? (e) => handleResumeClick(e, item.url) : undefined}
+                  className="underline text-[#00e0ff] hover:text-[#b8ffb8] transition break-words"
+                >
+                  {item.label}
+                </a>
+                {idx < output.length - 1 && <span>,&nbsp;</span>}
+              </React.Fragment>
+            );
+          })}
           ]
         </span>
       );
